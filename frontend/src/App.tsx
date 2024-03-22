@@ -3,6 +3,8 @@ import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded'
 import { Box, CssBaseline, Divider, PaletteMode, ToggleButton, ToggleButtonGroup } from '@mui/material'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { useState } from 'react'
+import Footer from './components/common/Footer'
+import Navbar from './components/common/Navbar'
 import FAQ from './components/FAQ'
 import Features from './components/Features'
 import Hero from './components/Hero'
@@ -10,17 +12,11 @@ import Highlights from './components/Highlights'
 import LogoCollection from './components/LogoCollection'
 import Pricing from './components/Pricing'
 import Testimonials from './components/Testimonials'
-import Footer from './components/common/Footer'
-import Navbar from './components/common/Navbar'
 import ProjectsGrid from './layouts/ProjectsGrid'
 import getLPTheme from './theme/theme'
+import { ToggleCustomThemeProps } from './entities/ToggleCustomThemeProps'
 
 const defaultTheme = createTheme({})
-
-interface ToggleCustomThemeProps {
-  showCustomTheme: boolean
-  toggleCustomTheme: () => void
-}
 
 function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }: ToggleCustomThemeProps) {
   return (
