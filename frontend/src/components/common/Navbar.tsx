@@ -44,7 +44,7 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
             alignItems: 'center',
             justifyContent: 'space-between',
             flexShrink: 0,
-            bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.1)',
+            bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0)',
             backdropFilter: 'blur(24px)',
             maxHeight: 40,
             borderColor: 'divider',
