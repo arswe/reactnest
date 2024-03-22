@@ -41,7 +41,7 @@ function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }: ToggleCustomT
 }
 
 function App() {
-  const [mode, setMode] = React.useState<PaletteMode>('light')
+  const [mode, setMode] = React.useState<PaletteMode>('dark')
   const [showCustomTheme, setShowCustomTheme] = React.useState(true)
   const LPtheme = createTheme(getLPTheme(mode))
   const defaultTheme = createTheme({ palette: { mode } })
