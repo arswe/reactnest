@@ -58,14 +58,7 @@ function App() {
     <ThemeProvider theme={showCustomTheme ? LPtheme : defaultTheme}>
       <CssBaseline />
       <Navbar mode={mode} toggleColorMode={toggleColorMode} />
-
-      <Container
-        sx={{
-          bgcolor: 'background.default',
-          pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
-        }}
-      >
+      <Container sx={{ bgcolor: 'background.default', pt: { xs: 14, sm: 20 }, pb: { xs: 8, sm: 12 } }}>
         <div className='py-4'>
           <h1 className='text-3xl font-bold underline'>Hello world!</h1>
         </div>
