@@ -1,14 +1,9 @@
-import { PaletteMode } from '@mui/material'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 
 import ModeNightRoundedIcon from '@mui/icons-material/ModeNightRounded'
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded'
-
-interface ToggleColorModeProps {
-  mode: PaletteMode
-  toggleColorMode: () => void
-}
+import { ToggleColorModeProps } from '../../entities/ToggleColorModeProps'
 
 function ToggleColorMode({ mode, toggleColorMode }: ToggleColorModeProps) {
   return (
