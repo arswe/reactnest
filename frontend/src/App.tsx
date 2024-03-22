@@ -6,6 +6,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import * as React from 'react'
+import { Outlet } from 'react-router-dom'
 import Navbar from './components/common/Navbar'
 import { ToggleCustomThemeProps } from './entities/ToggleCustomThemeProps'
 import getLPTheme from './themes/Theme'
@@ -59,9 +60,7 @@ function App() {
       <CssBaseline />
       <Navbar mode={mode} toggleColorMode={toggleColorMode} />
       <Container sx={{ bgcolor: 'background.default', pt: { xs: 14, sm: 20 }, pb: { xs: 8, sm: 12 } }}>
-        <div className='py-4'>
-          <h1 className='text-3xl font-bold underline'>Hello world!</h1>
-        </div>
+        <Outlet />
       </Container>
       <ToggleCustomTheme showCustomTheme={showCustomTheme} toggleCustomTheme={toggleCustomTheme} />
     </ThemeProvider>

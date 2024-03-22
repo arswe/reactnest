@@ -90,6 +90,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
     fontFamily: ['"Rajdhani", "sans-serif"'].join(','),
     fontWeightMedium: 600,
     fontWeightBold: 700,
+
     h1: {
       fontSize: 60,
       fontWeight: 700,
@@ -107,7 +108,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
     },
     h4: {
       fontSize: 36,
-      fontWeight: 500,
+      fontWeight: 600,
       lineHeight: 1.5,
     },
     h5: {
@@ -134,6 +135,10 @@ export const getDesignTokens = (mode: PaletteMode) => ({
     caption: {
       fontWeight: 600,
       fontSize: 12,
+    },
+
+    overline: {
+      fontWeight: 600,
     },
   },
 })

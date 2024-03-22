@@ -96,7 +96,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
             padding: '12px 16px',
             textTransform: 'none',
             borderRadius: '10px',
-            fontWeight: 500,
+            fontWeight: 600,
             ...(theme.palette.mode === 'dark' && {
               color: gray[400],
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.5)',
@@ -206,10 +206,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
               backgroundColor: alpha(gray[800], 0.6),
               border: `1px solid ${alpha(gray[700], 0.3)}`,
               ...(ownerState.variant === 'outlined' && {
-                background: `linear-gradient(to bottom, ${gray[900]}, ${alpha(
-                  gray[800],
-                  0.5
-                )})`,
+                background: `linear-gradient(to bottom, ${gray[900]}, ${alpha(gray[800], 0.5)})`,
                 '&:hover': {
                   borderColor: brand[700],
                   boxShadow: `0 0 24px ${brand[800]}`,
@@ -279,7 +276,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
         styleOverrides: {
           root: ({ theme }) => ({
             color: brand[600],
-            fontWeight: 500,
+            fontWeight: 600,
             position: 'relative',
             textDecoration: 'none',
             '&::before': {
@@ -308,7 +305,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
           root: ({ theme }) => ({
             borderRadius: '99px',
             color: gray[500],
-            fontWeight: 500,
+            fontWeight: 600,
             ...(theme.palette.mode === 'dark' && {
               color: gray[300],
             }),
