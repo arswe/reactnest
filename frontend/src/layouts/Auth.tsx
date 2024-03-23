@@ -1,7 +1,13 @@
 import { Button, Container, Stack, TextField } from '@mui/material'
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 
-const Auth = () => {
+interface AuthProps {
+  submitLabel: string
+  onSubmit: (credentials: { email: string; password: string }) => Promise<void>
+  children?: ReactNode
+}
+
+const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   return (
@@ -34,6 +40,7 @@ const Auth = () => {
         <TextField
           id='password'
           hiddenLabel
+          margin='normal'
           size='small'
           variant='outlined'
           aria-label='Password'
@@ -46,9 +53,11 @@ const Auth = () => {
             ariaLabel: 'Password',
           }}
         />
-        <Button variant='contained' color='primary'>
-          Sign In
+        <Button variant='contained' color='primary' onClick={() => onSubmit({ email, password })}>
+          {submitLabel}
         </Button>
+
+        {children}
       </Stack>
     </Container>
   )

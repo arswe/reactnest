@@ -62,11 +62,11 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
             }}
           >
             <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-            <Button color='success' variant='outlined' size='small' component='a' href='/sign-in' target='_blank'>
+            <Button color='success' variant='outlined' size='small' component='a' href='/login' target='_blank'>
               Sign In
             </Button>
-            <Button color='primary' variant='contained' size='small' component='a' href='/sign-up/' target='_blank'>
-              Sign Up
+            <Button color='primary' variant='contained' size='small' component='a' href='/register' target='_blank'>
+              Register
             </Button>
           </Box>
           <Box sx={{ display: { sm: '', md: 'none' } }}>
@@ -90,11 +90,11 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
                     color='primary'
                     variant='contained'
                     component='a'
-                    href='/sign-up'
+                    href='/login'
                     target='_blank'
                     sx={{ width: '100%' }}
                   >
-                    Sign In
+                    Login
                   </Button>
                 </MenuItem>
                 <MenuItem>
@@ -102,11 +102,11 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
                     color='primary'
                     variant='outlined'
                     component='a'
-                    href='/docs'
+                    href='/register'
                     target='_blank'
                     sx={{ width: '100%' }}
                   >
-                    Sign Up
+                    Register
                   </Button>
                 </MenuItem>
               </Box>

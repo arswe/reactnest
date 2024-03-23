@@ -1,21 +1,17 @@
-import PropTypes from 'prop-types'
-import { forwardRef } from 'react'
+import { Link as MuiLink } from '@mui/material'
 import { Link } from 'react-router-dom'
 
-// ----------------------------------------------------------------------
-
-import { Validator } from 'prop-types'
-
-interface RouterLinkProps {
+interface Props {
   href: string
+  children: string | JSX.Element | JSX.Element[]
 }
 
-const RouterLink = forwardRef<HTMLAnchorElement, RouterLinkProps>(({ href, ...other }, ref) => (
-  <Link ref={ref} to={href} {...other} />
-))
-
-RouterLink.propTypes = {
-  href: PropTypes.string.isRequired as Validator<string>,
+const RouterLink = ({ href, children }: Props) => {
+  return (
+    <Link to={href}>
+      <MuiLink>{children}</MuiLink>
+    </Link>
+  )
 }
 
 export default RouterLink
