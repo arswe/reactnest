@@ -29,7 +29,7 @@ import { UsersModule } from './users/users.module';
         return {
           pinoHttp: {
             transport: isProduction
-              ? 'undefined'
+              ? undefined
               : {
                   target: 'pino-pretty',
                   options: {
