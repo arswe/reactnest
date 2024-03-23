@@ -1,5 +1,4 @@
 import MenuIcon from '@mui/icons-material/Menu'
-import { PaletteMode } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -8,18 +7,9 @@ import Drawer from '@mui/material/Drawer'
 import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import * as React from 'react'
-import { Link } from 'react-router-dom'
+import { NavbarProps } from '../../entities/NavbarProps'
+import RouterLink from '../shared/RouterLink'
 import ToggleColorMode from './ToggleColorMode'
-
-const logoStyle = {
-  height: 'auto',
-  cursor: 'pointer',
-}
-
-interface NavbarProps {
-  mode: PaletteMode
-  toggleColorMode: () => void
-}
 
 function Navbar({ mode, toggleColorMode }: NavbarProps) {
   const [open, setOpen] = React.useState(false)
@@ -60,9 +50,9 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
               px: 3,
             }}
           >
-            <Link style={logoStyle} to='/'>
-              LOGO
-            </Link>
+            <Button variant='text' color='success' LinkComponent={RouterLink} href='/'>
+              ReactNest
+            </Button>
           </Box>
           <Box
             sx={{
