@@ -19,12 +19,12 @@ export class UsersService {
     return this.userRepository.find({});
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  async findOne(_id: string) {
+    return this.userRepository.findOne({ _id });
   }
 
-  update(id: number, updateUserInput: UpdateUserInput) {
-    return `This action updates a #${id} user`;
+  async update(_id: string, updateUserInput: UpdateUserInput) {
+    return this.userRepository.findOneAndUpdate({ _id }, updateUserInput);
   }
 
   remove(id: number) {
