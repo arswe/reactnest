@@ -73,10 +73,10 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
           >
             <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
             <Button color='success' variant='outlined' size='small' component='a' href='/sign-in' target='_blank'>
-              Docs
+              Sign In
             </Button>
             <Button color='primary' variant='contained' size='small' component='a' href='/sign-up/' target='_blank'>
-              Get Started
+              Sign Up
             </Button>
           </Box>
           <Box sx={{ display: { sm: '', md: 'none' } }}>
@@ -104,7 +104,7 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
                     target='_blank'
                     sx={{ width: '100%' }}
                   >
-                    Sign up
+                    Sign In
                   </Button>
                 </MenuItem>
                 <MenuItem>
@@ -116,7 +116,7 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
                     target='_blank'
                     sx={{ width: '100%' }}
                   >
-                    Docs
+                    Sign Up
                   </Button>
                 </MenuItem>
               </Box>

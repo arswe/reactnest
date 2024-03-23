@@ -1,5 +1,9 @@
+import Auth from "../components/Auth"
+
 const Home = () => {
-  return <div>Home</div>
+  return <div>
+    <Auth />
+  </div>
 }
 
 export default Home
