@@ -11,8 +11,12 @@ export class UsersService {
   async create(createUserInput: CreateUserInput) {
     return this.userRepository.create({
       ...createUserInput,
-      password: await bcrypt.hash(createUserInput.password, 10),
+      password: await this.hashPassword(createUserInput.password),
     });
+  }
+
+  private async hashPassword(password: string) {
+    return await bcrypt.hash(password, 10);
   }
 
   async findAll() {
@@ -24,10 +28,19 @@ export class UsersService {
   }
 
   async update(_id: string, updateUserInput: UpdateUserInput) {
-    return this.userRepository.findOneAndUpdate({ _id }, updateUserInput);
+    const password = updateUserInput.password ?? '';
+    return this.userRepository.findOneAndUpdate(
+      { _id },
+      {
+        $set: {
+          ...updateUserInput,
+          password: await this.hashPassword(password),
+        },
+      },
+    );
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(_id: string) {
+    return this.userRepository.findOneAndDelete({ _id });
   }
 }
