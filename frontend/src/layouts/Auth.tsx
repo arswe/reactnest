@@ -1,4 +1,4 @@
-import { Button, Container, Paper, Stack, TextField, Typography } from '@mui/material'
+import { Button, Container, Stack, TextField, Typography } from '@mui/material'
 import { ReactNode, useState } from 'react'
 
 interface AuthProps {
@@ -13,7 +13,6 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
   return (
     <Container maxWidth='sm'>
       <Stack
-        component={Paper}
         direction={{ xs: 'column', sm: 'column' }}
         alignSelf='center'
         justifyContent={'center'}
