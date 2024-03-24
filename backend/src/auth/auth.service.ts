@@ -8,25 +8,26 @@ import { TokenPayload } from './token-payload.interface';
 @Injectable()
 export class AuthService {
   constructor(
-    private configService: ConfigService,
-    private readonly jwtSerive: JwtService,
+    private readonly configService: ConfigService,
+    private readonly jwtService: JwtService,
   ) {}
 
   async login(user: User, response: Response) {
-    const expiresIn = new Date();
-    expiresIn.setSeconds(
-      expiresIn.getSeconds() + this.configService.getOrThrow('JWT_EXPIRATION'),
+    const expires = new Date();
+    expires.setSeconds(
+      expires.getSeconds() + this.configService.getOrThrow('JWT_EXPIRATION'),
     );
 
     const tokenPayload: TokenPayload = {
       _id: user._id.toHexString(),
       email: user.email,
     };
-    const token = this.jwtSerive.sign(tokenPayload);
+
+    const token = this.jwtService.sign(tokenPayload);
 
     response.cookie('Authentication', token, {
       httpOnly: true,
-      expires: expiresIn,
+      expires,
     });
   }
 }
