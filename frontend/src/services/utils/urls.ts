@@ -1,3 +1,5 @@
-const API_URL: string = import.meta.env.REACT_APP_API_URL || 'http://localhost:3000'
+const API_URL = import.meta.env.VITE_API_URL as string
 
 export { API_URL }
+
+console.log(API_URL)
