@@ -4,7 +4,7 @@ import { config, database, up } from 'migrate-mongo';
 
 @Injectable()
 export class DbMigrationService implements OnModuleInit {
-  private readonly dbMigrationService: Partial<config.Config> = {
+  private readonly dbMigrationConfig: Partial<config.Config> = {
     mongodb: {
       databaseName: this.configService.getOrThrow('DB_NAME'),
       url: this.configService.getOrThrow('MONGODB_URI'),
@@ -17,7 +17,7 @@ export class DbMigrationService implements OnModuleInit {
   constructor(private readonly configService: ConfigService) {}
 
   async onModuleInit() {
-    config.set(this.dbMigrationService);
+    config.set(this.dbMigrationConfig);
     const { db, client } = await database.connect();
     await up(db, client);
   }
