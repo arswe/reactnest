@@ -6,6 +6,7 @@ import * as Joi from 'joi';
 import { LoggerModule } from 'nestjs-pino';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
 import { DatabaseModule } from './common/database/database.module';
 import { UsersModule } from './users/users.module';
 
@@ -30,18 +31,14 @@ import { UsersModule } from './users/users.module';
           pinoHttp: {
             transport: isProduction
               ? undefined
-              : {
-                  target: 'pino-pretty',
-                  options: {
-                    singleLine: true,
-                  },
-                },
+              : { target: 'pino-pretty', options: { singleLine: true } },
             level: isProduction ? 'info' : 'debug',
           },
         };
       },
       inject: [ConfigService],
     }),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
