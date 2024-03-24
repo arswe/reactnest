@@ -5,13 +5,10 @@ import { Strategy } from 'passport-local';
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
   constructor() {
-    super({
-      usernameField: 'username',
-      passwordField: 'password',
-    });
+    super({ usernameField: 'email' });
   }
 
-  async validate(username: string, password: string) {
-    return { username, password };
+  async validate(email: string, password: string) {
+    return { email, password };
   }
 }
