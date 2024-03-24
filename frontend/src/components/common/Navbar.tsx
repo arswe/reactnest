@@ -7,6 +7,7 @@ import Drawer from '@mui/material/Drawer'
 import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import { NavbarProps } from '../../entities/NavbarProps'
 import RouterLink from '../shared/RouterLink'
 import ToggleColorMode from './ToggleColorMode'
@@ -62,10 +63,10 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
             }}
           >
             <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-            <Button color='success' variant='outlined' size='small' component='a' href='/login' target='_blank'>
+            <Button color='success' variant='outlined' size='small' component={Link} to='/login'>
               Sign In
             </Button>
-            <Button color='primary' variant='contained' size='small' component='a' href='/register' target='_blank'>
+            <Button color='primary' variant='contained' size='small' component={Link} to='/register'>
               Register
             </Button>
           </Box>
@@ -86,26 +87,12 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
                 </Box>
 
                 <MenuItem>
-                  <Button
-                    color='primary'
-                    variant='contained'
-                    component='a'
-                    href='/login'
-                    target='_blank'
-                    sx={{ width: '100%' }}
-                  >
+                  <Button color='primary' variant='contained' component={Link} to='/login' sx={{ width: '100%' }}>
                     Login
                   </Button>
                 </MenuItem>
                 <MenuItem>
-                  <Button
-                    color='primary'
-                    variant='outlined'
-                    component='a'
-                    href='/register'
-                    target='_blank'
-                    sx={{ width: '100%' }}
-                  >
+                  <Button color='primary' variant='outlined' component={Link} to='/register' sx={{ width: '100%' }}>
                     Register
                   </Button>
                 </MenuItem>

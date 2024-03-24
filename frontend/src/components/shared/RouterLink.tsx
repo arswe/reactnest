@@ -1,17 +1,17 @@
-import { Link as MuiLink } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Link } from '@mui/material'
+import { ReactNode, forwardRef } from 'react'
+import { Link as CustomLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 
-interface Props {
-  href: string
-  children: string | JSX.Element | JSX.Element[]
+interface RouterLinkPropsWithChildren extends RouterLinkProps {
+  children: ReactNode
 }
 
-const RouterLink = ({ href, children }: Props) => {
-  return (
-    <Link to={href}>
-      <MuiLink>{children}</MuiLink>
-    </Link>
-  )
+const RouterLinkWithRef = forwardRef<HTMLAnchorElement, RouterLinkPropsWithChildren>((props, ref) => (
+  <CustomLink ref={ref} {...props} />
+))
+
+const RouterLink = (props: RouterLinkPropsWithChildren) => {
+  return <Link component={RouterLinkWithRef} {...props} />
 }
 
 export default RouterLink

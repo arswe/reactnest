@@ -13,7 +13,7 @@ const Register = () => {
         })
       }}
     >
-      <RouterLink href={'/login'}>Login</RouterLink>
+      <RouterLink to={'/login'}>Login</RouterLink>
     </Auth>
   )
 }

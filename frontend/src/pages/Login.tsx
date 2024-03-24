@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <div>
       <Auth submitLabel='Login' onSubmit={async () => {}}>
-        <RouterLink href={'/register'}>Register</RouterLink>
+        <RouterLink to={'/register'}>Register</RouterLink>
       </Auth>
     </div>
   )
