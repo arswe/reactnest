@@ -1,15 +1,13 @@
-import dotenv from 'dotenv'
+import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-dotenv.config()
 
-const { PORT = 3000 } = process.env
-
+// https://vitejs.dev/config/
 export default defineConfig({
-  // Other Vite configurations...
+  plugins: [react()],
   server: {
     proxy: {
       '/api': {
-        target: `http://localhost:${PORT}`,
+        target: 'http://localhost:300/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
