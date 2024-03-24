@@ -43,4 +43,10 @@ export class UsersService {
   async remove(_id: string) {
     return this.userRepository.findOneAndDelete({ _id });
   }
+
+  async verufyUser(email: string, password: string) {
+    const user = await this.userRepository.findOne({ email });
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+  }
 }
