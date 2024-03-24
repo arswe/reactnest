@@ -27,16 +27,7 @@ const ErrorPage = () => {
           spelling.
         </Typography>
 
-        <Box
-          component='img'
-          src={illustration_404}
-          sx={{
-            mx: 'auto',
-            height: 260,
-            my: { xs: 5, sm: 10 },
-          }}
-        />
-
+        <Box component='img' src={illustration_404} sx={{ mx: 'auto', height: 260, my: { xs: 5, sm: 10 } }} />
         <Button to='/' size='large' variant='contained' component={Link}>
           Go to Home
         </Button>
