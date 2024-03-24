@@ -26,14 +26,10 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
           id='Email'
           hiddenLabel
           variant='outlined'
-          aria-label='Email'
           placeholder='Email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          inputProps={{
-            autocomplete: 'off',
-            ariaLabel: 'Email',
-          }}
+          inputProps={{ autoComplete: 'off' }}
         />
 
         <TextField
@@ -41,15 +37,11 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
           hiddenLabel
           margin='normal'
           variant='outlined'
-          aria-label='Password'
           type='password'
           placeholder='Password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          inputProps={{
-            autocomplete: 'off',
-            ariaLabel: 'Password',
-          }}
+          inputProps={{ autoComplete: 'off' }}
         />
         <Button variant='contained' color='primary' onClick={() => onSubmit({ email, password })}>
           {submitLabel}
