@@ -1,5 +1,5 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
-import { API_URL } from './urls'
+import { API_URL } from '../utils/urls'
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
