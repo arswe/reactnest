@@ -25,7 +25,6 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
         <TextField
           id='Email'
           hiddenLabel
-          size='small'
           variant='outlined'
           aria-label='Email'
           placeholder='Email'
@@ -41,7 +40,6 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
           id='password'
           hiddenLabel
           margin='normal'
-          size='small'
           variant='outlined'
           aria-label='Password'
           type='password'
