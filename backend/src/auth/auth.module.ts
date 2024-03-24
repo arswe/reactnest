@@ -12,7 +12,7 @@ import { LocalStrategy } from './strategies/local.strategy';
     JwtModule.registerAsync({
       useFactory: (configService: ConfigService) => ({
         secret: configService.getOrThrow('JWT_SECRET'),
-        signOptions: { expiresIn: 'JWT_EXPIRATION' },
+        signOptions: { expiresIn: configService.getOrThrow('JWT_EXPIRATION') },
       }),
     }),
   ],
