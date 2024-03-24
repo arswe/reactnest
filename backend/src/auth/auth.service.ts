@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
 import { User } from 'src/users/entities/user.entity';
-import { TokenPayload } from './../../dist/auth/token-payload.interface.d';
+import { TokenPayload } from './token-payload.interface';
 
 @Injectable()
 export class AuthService {
@@ -27,8 +27,6 @@ export class AuthService {
     response.cookie('Authentication', token, {
       httpOnly: true,
       expires: expiresIn,
-      secure: this.configService.getOrThrow('HTTPS'),
-      sameSite: 'none',
     });
   }
 }
