@@ -1,4 +1,4 @@
-import { Button, Container, Stack, TextField, Typography } from '@mui/material'
+import { Button, Container, Paper, Stack, TextField, Typography } from '@mui/material'
 import { ReactNode, useState } from 'react'
 
 interface AuthProps {
@@ -13,6 +13,7 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
   return (
     <Container maxWidth='sm'>
       <Stack
+        component={Paper}
         direction={{ xs: 'column', sm: 'column' }}
         alignSelf='center'
         justifyContent={'center'}
@@ -22,13 +23,14 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
         gap={4}
         sx={{ p: 2, width: { xs: '100%', sm: 'auto' } }}
       >
-        <Typography variant='h4' sx={{ py: 4 }}>
+        <Typography variant='h4' sx={{ py: 4 }} align='center'>
           {submitLabel}
         </Typography>
 
         <TextField
           id='Email'
           hiddenLabel
+          margin='normal'
           variant='outlined'
           placeholder='Email'
           value={email}
@@ -47,7 +49,7 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
           onChange={(e) => setPassword(e.target.value)}
           inputProps={{ autoComplete: 'off' }}
         />
-        <Button variant='contained' color='primary' onClick={() => onSubmit({ email, password })}>
+        <Button variant='contained' color='primary' onClick={() => onSubmit({ email, password })} sx={{ my: '1rem' }}>
           {submitLabel}
         </Button>
 
