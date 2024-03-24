@@ -44,13 +44,13 @@ export class UsersService {
     return this.userRepository.findOneAndDelete({ _id });
   }
 
-  async verufyUser(email: string, password: string) {
+  async verifyUser(email: string, password: string) {
     const user = await this.userRepository.findOne({ email });
-
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
       throw new UnauthorizedException('Invalid credentials');
     }
+    return user;
   }
 }
