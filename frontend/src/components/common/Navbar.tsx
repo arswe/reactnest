@@ -9,7 +9,7 @@ import Toolbar from '@mui/material/Toolbar'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { NavbarProps } from '../../entities/NavbarProps'
-import RouterLink from '../shared/RouterLink'
+
 import ToggleColorMode from './ToggleColorMode'
 
 function Navbar({ mode, toggleColorMode }: NavbarProps) {
@@ -20,14 +20,7 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
   }
 
   return (
-    <AppBar
-      position='fixed'
-      sx={{
-        boxShadow: 0,
-        bgcolor: 'transparent',
-        backgroundImage: 'none',
-      }}
-    >
+    <AppBar position='fixed' sx={{ boxShadow: 0, bgcolor: 'transparent', backgroundImage: 'none' }}>
       <Container maxWidth='lg'>
         <Toolbar
           variant='regular'
@@ -42,26 +35,12 @@ function Navbar({ mode, toggleColorMode }: NavbarProps) {
             borderColor: 'divider',
           })}
         >
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: 'flex',
-              alignItems: 'center',
-              ml: '-18px',
-              px: 3,
-            }}
-          >
-            <Button variant='text' color='success' LinkComponent={RouterLink} href='/'>
+          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', ml: '-18px', px: 3 }}>
+            <Button variant='text' color='success' LinkComponent={Link} href='/'>
               ReactNest
             </Button>
           </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-              gap: 0.5,
-              alignItems: 'center',
-            }}
-          >
+          <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 0.5, alignItems: 'center' }}>
             <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
             <Button color='success' variant='outlined' size='small' component={Link} to='/login'>
               Sign In

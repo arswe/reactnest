@@ -1,11 +1,11 @@
-import RouterLink from '../components/shared/RouterLink'
+import { Link } from 'react-router-dom'
 import Auth from '../layouts/Auth'
 
 const Login = () => {
   return (
     <div>
       <Auth submitLabel='Login' onSubmit={async () => {}}>
-        <RouterLink to={'/register'}>Register</RouterLink>
+        <Link to={'/register'}>Register</Link>
       </Auth>
     </div>
   )

@@ -1,4 +1,4 @@
-import { Button, Container, Stack, TextField } from '@mui/material'
+import { Button, Container, Stack, TextField, Typography } from '@mui/material'
 import { ReactNode, useState } from 'react'
 
 interface AuthProps {
@@ -22,6 +22,10 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
         gap={4}
         sx={{ p: 2, width: { xs: '100%', sm: 'auto' } }}
       >
+        <Typography variant='h4' sx={{ py: 4 }}>
+          {submitLabel}
+        </Typography>
+
         <TextField
           id='Email'
           hiddenLabel

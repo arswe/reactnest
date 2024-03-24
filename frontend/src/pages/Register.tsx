@@ -1,4 +1,4 @@
-import RouterLink from '../components/shared/RouterLink'
+import { Link } from 'react-router-dom'
 import { useCreateUser } from '../hooks/useCreateUser'
 import Auth from '../layouts/Auth'
 
@@ -13,7 +13,7 @@ const Register = () => {
         })
       }}
     >
-      <RouterLink to={'/login'}>Login</RouterLink>
+      <Link to={'/login'}>Login</Link>
     </Auth>
   )
 }

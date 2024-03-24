@@ -1,6 +1,6 @@
 import { Box, Button, Container, Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
 import illustration_404 from '../assets/illustration_404.svg'
-import RouterLink from '../components/shared/RouterLink'
 
 const ErrorPage = () => {
   return (
@@ -37,7 +37,7 @@ const ErrorPage = () => {
           }}
         />
 
-        <Button href='/' size='large' variant='contained' component={RouterLink}>
+        <Button to='/' size='large' variant='contained' component={Link}>
           Go to Home
         </Button>
       </Box>
