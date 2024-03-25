@@ -4,10 +4,11 @@ import { ReactNode, useState } from 'react'
 interface AuthProps {
   submitLabel: string
   onSubmit: (credentials: { email: string; password: string }) => Promise<void>
-  children?: ReactNode
+  children: ReactNode
+  error?: string
 }
 
-const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
+const Auth = ({ submitLabel, onSubmit, children, error }: AuthProps) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   return (
@@ -35,6 +36,8 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           inputProps={{ autoComplete: 'off' }}
+          error={!!error}
+          helperText={error}
         />
 
         <TextField
@@ -47,6 +50,8 @@ const Auth = ({ submitLabel, onSubmit, children }: AuthProps) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           inputProps={{ autoComplete: 'off' }}
+          error={!!error}
+          helperText={error}
         />
         <Button variant='contained' color='primary' onClick={() => onSubmit({ email, password })} sx={{ my: '1rem' }}>
           {submitLabel}

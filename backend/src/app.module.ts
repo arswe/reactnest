@@ -1,6 +1,7 @@
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { DevtoolsModule } from '@nestjs/devtools-integration';
 import { GraphQLModule } from '@nestjs/graphql';
 import * as Joi from 'joi';
 import { LoggerModule } from 'nestjs-pino';
@@ -12,6 +13,7 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
+    DevtoolsModule.register({ http: process.env.NODE_ENV !== 'production' }),
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema: Joi.object({
