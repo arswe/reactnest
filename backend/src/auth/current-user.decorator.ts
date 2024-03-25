@@ -7,6 +7,8 @@ const getCurrentUserByContext = (context: ExecutionContext): User => {
     return context.switchToHttp().getRequest().user;
   } else if (context.getType<GqlContextType>() === 'graphql') {
     return GqlExecutionContext.create(context).getContext().req.user;
+  } else {
+    throw new Error('Unsupported context type');
   }
 };
 
