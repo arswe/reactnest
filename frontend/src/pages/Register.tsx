@@ -25,6 +25,7 @@ const Register = () => {
       if (errorMessage) {
         setError(errorMessage)
       }
+      setError('Unknown error occured.')
     }
   }
 
