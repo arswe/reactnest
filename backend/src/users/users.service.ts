@@ -45,7 +45,7 @@ export class UsersService {
       );
     }
 
-    return this.userRepository.findOneAndUpdate(
+    return this.usersRepository.findOneAndUpdate(
       { _id },
       { $set: { ...updateUserInput } },
     );
