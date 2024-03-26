@@ -35,7 +35,7 @@ export class UsersService {
   }
 
   async findOne(_id: string) {
-    return this.userRepository.findOne({ _id });
+    return this.usersRepository.findOne({ _id });
   }
 
   async update(_id: string, updateUserInput: UpdateUserInput) {
