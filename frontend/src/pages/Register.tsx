@@ -6,7 +6,6 @@ import { extractErrorMessage } from '../services/utils/errors'
 
 const Register = () => {
   const [createUser] = useCreateUser()
-
   const [error, setError] = useState('')
 
   return (
