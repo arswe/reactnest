@@ -10,11 +10,11 @@ interface LoginRequest {
 const useLogin = () => {
   const [error, setError] = useState<boolean>()
 
-  const login = async (loginRequest: LoginRequest) => {
+  const login = async (request: LoginRequest) => {
     const res = await fetch(`${API_URL}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(loginRequest),
+      body: JSON.stringify(request),
     })
     if (!res.ok) {
       setError(true)
