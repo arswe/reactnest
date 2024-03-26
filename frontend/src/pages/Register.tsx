@@ -31,6 +31,6 @@ const Register = () => {
       <Link to={'/login'}>Login</Link>
     </Auth>
   )
-} 
+}
 
 export default Register
