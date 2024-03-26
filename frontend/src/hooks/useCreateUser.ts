@@ -1,7 +1,7 @@
 import { gql, useMutation } from '@apollo/client'
 import { User } from '../models/User'
 
-export interface CreateUserInput {
+interface CreateUserInput {
   createUserInput: {
     email: string
     password: string
