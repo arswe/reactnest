@@ -18,6 +18,7 @@ const Register = () => {
           await createUser({
             variables: { createUserInput: { email, password } },
           })
+
           setError('')
         } catch (err) {
           const errorMessage = extractErrorMessage(err)
