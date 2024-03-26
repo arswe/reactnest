@@ -7,11 +7,14 @@ import { RouterProvider } from 'react-router-dom'
 import './index.css'
 import router from './routes/routes'
 import client from './services/constants/apollo-client'
+import Guard from './services/guard/Guard'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <RouterProvider router={router} />
+      <Guard>
+        <RouterProvider router={router} />
+      </Guard>
       <SpeedInsights />
     </ApolloProvider>
   </React.StrictMode>
