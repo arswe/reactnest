@@ -10,19 +10,19 @@ import { UserRepository } from './repository/user.repository';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly userRepository: UserRepository) {}
+  constructor(private readonly usersRepository: UserRepository) {}
 
   async create(createUserInput: CreateUserInput) {
     try {
-      return await this.userRepository.create({
+      return await this.usersRepository.create({
         ...createUserInput,
         password: await this.hashPassword(createUserInput.password),
       });
-    } catch (error) {
-      if (error.message.includes('E11000')) {
-        throw new UnprocessableEntityException('User already exists');
+    } catch (err) {
+      if (err.message.includes('E11000')) {
+        throw new UnprocessableEntityException('Email already exists.');
       }
-      throw error;
+      throw err;
     }
   }
 
@@ -31,7 +31,7 @@ export class UsersService {
   }
 
   async findAll() {
-    return this.userRepository.find({});
+    return this.usersRepository.find({});
   }
 
   async findOne(_id: string) {
