@@ -52,7 +52,7 @@ export class UsersService {
   }
 
   async remove(_id: string) {
-    return this.userRepository.findOneAndDelete({ _id });
+    return this.usersRepository.findOneAndDelete({ _id });
   }
 
   async verifyUser(email: string, password: string) {
