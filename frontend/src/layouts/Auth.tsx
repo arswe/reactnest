@@ -34,10 +34,9 @@ const Auth = ({ submitLabel, onSubmit, children, error }: AuthProps) => {
           variant='outlined'
           placeholder='Email'
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          inputProps={{ autoComplete: 'off' }}
           error={!!error}
           helperText={error}
+          onChange={(event) => setEmail(event.target.value)}
         />
 
         <TextField
@@ -48,15 +47,13 @@ const Auth = ({ submitLabel, onSubmit, children, error }: AuthProps) => {
           type='password'
           placeholder='Password'
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          inputProps={{ autoComplete: 'off' }}
           error={!!error}
           helperText={error}
+          onChange={(event) => setPassword(event.target.value)}
         />
-        <Button variant='contained' color='primary' onClick={() => onSubmit({ email, password })} sx={{ my: '1rem' }}>
+        <Button variant='contained' onClick={() => onSubmit({ email, password })}>
           {submitLabel}
         </Button>
-
         {children}
       </Stack>
     </Container>
